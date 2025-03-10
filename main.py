@@ -1,32 +1,19 @@
-import anthropic
-import os
-import dotenv
+from flask import Flask, render_template, request, Response
+from duvidas import bot
 
-dotenv.load_dotenv()
-client = anthropic.Anthropic(
-    # defaults to os.environ.get("")
-    api_key=os.environ.get("ANTHROPIC_API_KEY")
-)
+app = Flask(__name__)
+app.secret_key = 'TRIP'
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+@app.route("/chat", methods = ['POST'])
+def chat():
+    prompt = request.json['msg']
+    resposta = bot(prompt)
+    return resposta
 
 
-# Replace placeholders like {{variavel_quantidade}} with real values,
-# because the SDK does not support variables.
-message = client.messages.create(
-    model="claude-3-5-sonnet-20240620",
-    max_tokens=1000,
-    temperature=1,
-    system="Listar apenas os nomes dos alimentos, sem adicionar descrição",
-    messages=[
-        {
-            "role": "user",
-            "content": [
-                {
-                    "type": "text",
-                    "text": "3 alimentos com brócolis"
-                }
-            ]
-        }
-    ]
-)
-resposta = message.content[0].text
-print(resposta)
+if __name__=="__main__":
+    app.run(debug = True)
