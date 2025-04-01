@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    background: linear-gradient(to bottom, #01080E, #144480);
+    background: #DA3368;
     color: #FFFFFF;
     font-family: 'Inter', sans-serif;
 }
@@ -26,7 +26,7 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 5rem;
-    border-bottom: 1px solid #1C5296;
+    border-bottom: 1px solid #FEA3C0;
 }
 
 .cabecalho__acoes {
@@ -78,7 +78,7 @@ body {
 }
 
 .chat__bolha--bot {
-    background-color: #5385C3;
+    background-color: #FEA3C0;
 }
 
 .chat__bolha--bot::after {
@@ -98,7 +98,7 @@ body {
 }
 
 .chat__bolha--usuario {
-    border: 1px solid #5385C3;
+    border: 1px solid rgb(255, 255, 255);
     align-self: flex-end;
 }
 
@@ -125,7 +125,7 @@ body {
     gap: 1.5rem;
     justify-content: stretch;
     align-items: center;
-    border-top: 1px solid #1C5296;
+    border-top: 1px solid #DA3368;
 }
 
 .entrada__container {
@@ -136,8 +136,8 @@ body {
 
     padding: 0 0.5rem;
 
-    background-color: #1C5296;
-    border: 1px solid #0C305C;
+    background-color: #DA3368;
+    border: 1px solid #FEA3C0;
     border-radius: 4rem;
 }
 
@@ -152,7 +152,7 @@ body {
 }
 
 .entrada__input::placeholder {
-    color: #CED3E0;
+    color: #FFFFFF;
 }
 
 .entrada__enviar-audio {
@@ -163,8 +163,8 @@ body {
     height: 4rem;
     width: 4rem;
 
-    background-color: #1C5296;
-    border: 1px solid #0C305C;
+    background-color: #DA3368;
+    border: 1px solid #FEA3C0;
     border-radius: 50%;
 }
 
